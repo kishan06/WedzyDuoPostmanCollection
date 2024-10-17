@@ -1,0 +1,3658 @@
+{
+	"info": {
+		"_postman_id": "52441283-320d-4b4b-8390-7f73906e67b4",
+		"name": "Vendor APIs",
+		"description": "# 🚀 Get started here\n\nThis collection guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this collection**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these request types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT and PATCH requests.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a variable called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more scripts in \"Tests\" to verify if the API works as expected and execute flows.\n    \n\n## ℹ️ Resources\n\n[Building requests](https://learning.postman.com/docs/sending-requests/requests/)  \n[Authorizing requests](https://learning.postman.com/docs/sending-requests/authorization/)  \n[Using variables](https://learning.postman.com/docs/sending-requests/variables/)  \n[Managing environments](https://learning.postman.com/docs/sending-requests/managing-environments/)  \n[Writing scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28489347",
+		"_collection_link": "https://lunar-shadow-756980.postman.co/workspace/Wedzy-Vendor-API~67120c48-3937-4eac-99e0-93930122bfda/collection/28489347-52441283-320d-4b4b-8390-7f73906e67b4?action=share&source=collection_link&creator=28489347"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Registration OTP Generate",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mobile_number",
+									"value": "9793134457",
+									"description": "9819906537",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}registration_otp_generate",
+							"host": [
+								"{{dev}}registration_otp_generate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration OTP Verification",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mobile_number",
+									"value": "9793134457",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}registration_otp_verification",
+							"host": [
+								"{{dev}}registration_otp_verification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nature Of Business",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}nature_of_business_listing",
+							"host": [
+								"{{local}}nature_of_business_listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration Form",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "mobile_number",
+									"value": "9793134457",
+									"description": "mandatory (",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pradyumn5@wdimails.com",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "nature_of_business_id",
+									"value": "2",
+									"description": "mandatory (id from nature of business listing api)",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "42",
+									"description": "mandatory (id from city listing API)",
+									"type": "text"
+								},
+								{
+									"key": "pincode",
+									"value": "400064",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "brand_name",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}registration_form",
+							"host": [
+								"{{local}}registration_form"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Business",
+			"item": [
+				{
+					"name": "Product Type Listing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nature_of_business_id",
+									"value": "1",
+									"description": "mandatory",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}product_type_listing",
+							"host": [
+								"{{local}}product_type_listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Business Data Store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nature_of_business_id",
+									"value": "2",
+									"description": "mandatory (1 for product, 2 for service)",
+									"type": "text"
+								},
+								{
+									"key": "product_type_id",
+									"value": "1",
+									"description": "mandatory if nature_of_business_id = 1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "vendor_service_id",
+									"value": "6",
+									"description": "mandatory if nature_of_business_id = 2",
+									"type": "text"
+								},
+								{
+									"key": "brand_name",
+									"value": "Demo1",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "city_id",
+									"value": "4",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "pincode",
+									"value": "400064",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Malad west1",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "experience",
+									"value": "0 -4 year",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "about_shop",
+									"value": "testing data",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "vendor_files[0]",
+									"description": "non mandatory",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/cup-of-coffee-1280537_1.4mb.jpeg"
+								},
+								{
+									"key": "vendor_files[1]",
+									"description": "non mandatory",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/SampleJPGImage_5mbmb.jpg"
+								},
+								{
+									"key": "email",
+									"value": "pradyumn5@wdimails.com",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "8828291147",
+									"description": "mandatory",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}vendor_business_add_information",
+							"host": [
+								"{{dev}}vendor_business_add_information"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "City Data Listing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "search",
+									"value": "mumbai",
+									"description": "non mandatory",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}city_listing",
+							"host": [
+								"{{dev}}city_listing"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Category Listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"description": "add product type id in url",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}sell_product_category_listing/2",
+							"host": [
+								"{{dev}}sell_product_category_listing"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Add Product Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_type_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "6",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "unique_product_id",
+									"value": "WDIPL1234",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "sku_id",
+									"value": "1Teste",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Demo local API",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "brand_name",
+									"value": "WDI",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "WEDZY123",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "manufacturer",
+									"value": "999",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "maximum_retail_price",
+									"value": "1234",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "tax_rate",
+									"value": "18",
+									"description": "non mandatory",
+									"type": "text"
+								},
+								{
+									"key": "web_banner_image",
+									"description": "non mandatory",
+									"type": "file",
+									"src": [
+										"/Users/macbookpro/Downloads/[FREE - HDconvert.com] logo2-removebg-preview.jpg",
+										"/Users/macbookpro/Downloads/album_12446580.png"
+									]
+								},
+								{
+									"key": "web_banner_link",
+									"value": "testlink",
+									"description": "non mandatory",
+									"type": "text"
+								},
+								{
+									"key": "product_images[0]",
+									"description": "mandatory",
+									"type": "file",
+									"src": [
+										"/Users/macbookpro/Downloads/[FREE - HDconvert.com] logo2-removebg-preview.jpg",
+										"/Users/macbookpro/Downloads/action_6181250.png"
+									]
+								},
+								{
+									"key": "product_images[1]",
+									"description": "mandatory",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/jewellery.png",
+									"disabled": true
+								},
+								{
+									"key": "tags[0]",
+									"value": "demo",
+									"type": "text"
+								},
+								{
+									"key": "tags[1]",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "tags[2]",
+									"value": "dummy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}vendor_add_product_data",
+							"host": [
+								"{{local}}vendor_add_product_data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Edit Data Listing",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}",
+								"description": "mandatory",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}product_edit_data_listing/3",
+							"host": [
+								"{{local}}product_edit_data_listing"
+							],
+							"path": [
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Product Update Store Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_type_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "6",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "unique_product_id",
+									"value": "WDIPL1234",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "sku_id",
+									"value": "1Teste",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Demo local API",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "brand_name",
+									"value": "WDI",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "WEDZY123",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "manufacturer",
+									"value": "999",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "maximum_retail_price",
+									"value": "1234",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "tax_rate",
+									"value": "18",
+									"description": "non mandatory",
+									"type": "text"
+								},
+								{
+									"key": "web_banner_image",
+									"description": "non mandatory",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/jewellery.png"
+								},
+								{
+									"key": "web_banner_link",
+									"value": "testlink",
+									"description": "non mandatory",
+									"type": "text"
+								},
+								{
+									"key": "product_images[0]",
+									"description": "mandatory",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/weeding_wear.png"
+								},
+								{
+									"key": "product_images[1]",
+									"description": "mandatory",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/jewellery.png"
+								},
+								{
+									"key": "tags[0]",
+									"value": "demo",
+									"type": "text"
+								},
+								{
+									"key": "tags[1]",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "tags[2]",
+									"value": "dummy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}vendor_update_product_data/2",
+							"host": [
+								"{{local}}vendor_update_product_data"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Product Listing",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}",
+								"description": "mandatory",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}vendor_product_listing",
+							"host": [
+								"{{local}}vendor_product_listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Details",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}",
+								"description": "mandatory",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}product_detail/1",
+							"host": [
+								"{{local}}product_detail"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sell Product Listing Based on Product Type",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}sell_product_listing/1",
+							"host": [
+								"{{local}}sell_product_listing"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3dlZHp5X2JhY2tlbmQvdmVuZG9yX2FwaS92MS9yZWdpc3RyYXRpb25fZm9ybSIsImlhdCI6MTcwMzY2MTQzNywiZXhwIjoxNzA2MjUzNDM3LCJuYmYiOjE3MDM2NjE0MzcsImp0aSI6IjdlenVDRVR3ck1KRm9TWXQiLCJzdWIiOiI0NCIsInBydiI6IjQwYmMzZmRlMzQ2MjU3YTg1MDk1MDJmZTY0MjM1NTlhMTExNjRiZDMifQ.6kRwC9Ie-8X1eUtceYIk84LRlCzXQGdK_tfEwOWoU2I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}vendor_delete_product_data/2",
+							"host": [
+								"{{local}}vendor_delete_product_data"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Image Delete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RldmVsb3BtZW50LndlZHp5LmNvL3ZlbmRvcl9hcGkvdjEvcmVnaXN0cmF0aW9uX290cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MDM4Mjc2OTUsImV4cCI6MTcwNjQxOTY5NSwibmJmIjoxNzAzODI3Njk1LCJqdGkiOiJPa3o4YzdKTm93a3d3OGxnIiwic3ViIjoiNDIiLCJwcnYiOiI0MGJjM2ZkZTM0NjI1N2E4NTA5NTAyZmU2NDIzNTU5YTExMTY0YmQzIn0.m3GnnACHgaPUeZm8h94dVX2FRcluubiGpEUbKlcKdDY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "remove_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}product_remove_image",
+							"host": [
+								"{{local}}product_remove_image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "About Us",
+			"item": [
+				{
+					"name": "Terms and Condition Listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{dev}}vendor_terms_and_condition",
+							"host": [
+								"{{dev}}vendor_terms_and_condition"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Privacy Policy Listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}vendor_privacy_and_policy",
+							"host": [
+								"{{local}}vendor_privacy_and_policy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "About Us Listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}vendor_about_us",
+							"host": [
+								"{{local}}vendor_about_us"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feedback",
+			"item": [
+				{
+					"name": "feedback-Master-Reaction",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev}}feedback_reactions",
+							"host": [
+								"{{dev}}feedback_reactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Feedback Data store",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "feedback_reaction_xid",
+									"value": "3",
+									"description": "The id comes from Reaction Master table (id)->required",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "Lorem ipsum",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "iam_principal_xid",
+									"value": "6",
+									"description": "vendor iam_principal_id  required",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "ratings",
+									"value": "Neutral",
+									"description": "value form reaction master table required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}feedback_store",
+							"host": [
+								"{{dev}}feedback_store"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Task Type",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev}}task_type_listing",
+							"host": [
+								"{{dev}}task_type_listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task Listing Data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev}}task_listing/1",
+							"host": [
+								"{{dev}}task_listing"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Task Add",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_name",
+									"value": "dfghjk",
+									"type": "text"
+								},
+								{
+									"key": "task_date",
+									"value": "2023/22/12",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}add_task",
+							"host": [
+								"{{local}}add_task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access-token}}",
+								"description": "Your Token",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"description": "1 is the Task id",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{local}}task_delete/1",
+							"host": [
+								"{{local}}task_delete"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Faq",
+			"item": [
+				{
+					"name": "Vendor Faq Listing",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}vendor_faq/1",
+							"host": [
+								"{{local}}vendor_faq"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Faq Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}vendor_faq_category",
+							"host": [
+								"{{local}}vendor_faq_category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contact Us",
+			"item": [
+				{
+					"name": "Vendor Contact Us",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Salman",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sallu@gmail.com",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "kanxl",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}contact_us",
+							"host": [
+								"{{dev}}contact_us"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Add Service Portfolio",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "portfolio_title",
+									"value": "portfolio images testing1",
+									"type": "text"
+								},
+								{
+									"key": "portfolio_images[0]",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/downloadfile.jpg"
+								},
+								{
+									"key": "portfolio_images[1]",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/Snap (2).png"
+								},
+								{
+									"key": "portfolio_images[]",
+									"type": "file",
+									"src": "/C:/Users/rjha1/OneDrive/Desktop/images/images.jpeg",
+									"disabled": true
+								},
+								{
+									"key": "service_xid",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}add_portfolio",
+							"host": [
+								"{{dev}}add_portfolio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service Listing",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nature_of_business_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}vendor_service_listing",
+							"host": [
+								"{{local}}vendor_service_listing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Portfolio Album Delete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_xid",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "portfolio_name",
+									"value": "portfolio images testing1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}portfolio_delete_album",
+							"host": [
+								"{{dev}}portfolio_delete_album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Portfolio Album  Image Delete",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "remove_id",
+									"value": "469",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}portfolio_remove_image",
+							"host": [
+								"{{dev}}portfolio_remove_image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service Package",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_service_xid",
+									"value": "6",
+									"description": "mandatory",
+									"type": "text"
+								},
+								{
+									"key": "venue_master_xid",
+									"value": "3",
+									"description": "mandatory when vendor_service_xid = 6",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}delete_service_package",
+							"host": [
+								"{{dev}}delete_service_package"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Vendor Bank Details Store",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "bank_acc_holder_name",
+									"value": "Raj",
+									"type": "text"
+								},
+								{
+									"key": "bank_acc_type",
+									"value": "Current",
+									"type": "text"
+								},
+								{
+									"key": "bank_acc_number",
+									"value": "1235QWDW589WOPWS",
+									"type": "text"
+								},
+								{
+									"key": "bank_name",
+									"value": "Kotak Mahindra",
+									"type": "text"
+								},
+								{
+									"key": "bank_city",
+									"value": "Mumbai",
+									"type": "text"
+								},
+								{
+									"key": "branch_name",
+									"value": "Andheri",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}store/bank_details",
+							"host": [
+								"{{local}}store"
+							],
+							"path": [
+								"bank_details"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Vendor-bank-details-store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "{{access-token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "bank_acc_holder_name",
+											"value": "Raj",
+											"type": "text"
+										},
+										{
+											"key": "bank_acc_type",
+											"value": "Current",
+											"type": "text"
+										},
+										{
+											"key": "bank_acc_number",
+											"value": "1235QWDW589WOPWS",
+											"type": "text"
+										},
+										{
+											"key": "bank_name",
+											"value": "Kotak Mahindra",
+											"type": "text"
+										},
+										{
+											"key": "bank_city",
+											"value": "Mumbai",
+											"type": "text"
+										},
+										{
+											"key": "branch_name",
+											"value": "Andheri",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}store/bank_details",
+									"host": [
+										"{{local}}store"
+									],
+									"path": [
+										"bank_details"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 06:53:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"status_code\": 201,\n    \"message\": \"Data Saved Successfully.\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Vendor Tax Details Store",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tax_number",
+									"value": "TXN123YXZQWM",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "tax_seller_name",
+									"value": "TestM",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "gst_number",
+									"value": "AWDW88658QWDWS",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "hsn_code",
+									"value": "RTYUI",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}tax_details",
+							"host": [
+								"{{dev}}tax_details"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Vendor Tax-detail-store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access-token",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L1dlZHp5LUJhY2tlbmQvdmVuZG9yX2FwaS92MS9yZWdpc3RyYXRpb25fb3RwX3ZlcmlmaWNhdGlvbiIsImlhdCI6MTcwMzA3ODI2NywiZXhwIjoxNzA1NjcwMjY3LCJuYmYiOjE3MDMwNzgyNjcsImp0aSI6IkhadFlyazNGeXdzMHZiTkEiLCJzdWIiOiI2IiwicHJ2IjoiNDBiYzNmZGUzNDYyNTdhODUwOTUwMmZlNjQyMzU1OWExMTE2NGJkMyJ9.eulkkGQyIfcnLgELAzXgf6LhmKfwHVUPiCzMpkuw6VM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "tax_number",
+											"value": "TXN123YXZQW",
+											"type": "text"
+										},
+										{
+											"key": "tax_seller_name",
+											"value": "Test",
+											"type": "text"
+										},
+										{
+											"key": "gst_number",
+											"value": "AWDW88658QWDWS",
+											"type": "text"
+										},
+										{
+											"key": "hsn_code",
+											"value": "RTYUI",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}tax_details",
+									"host": [
+										"{{local}}tax_details"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 21 Dec 2023 06:44:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.2.12"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, must-revalidate, max-age=0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"status_code\": 201,\n    \"message\": \"Data Saved Successfully.\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Vendor Signature Upload",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sign_image",
+									"type": "file",
+									"src": "/C:/Users/wdila/OneDrive/Documents/download.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}signature_upload",
+							"host": [
+								"{{dev}}signature_upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vendor Data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"url": {
+							"raw": "{{dev}}get_vendor_data",
+							"host": [
+								"{{dev}}get_vendor_data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Hritik",
+									"type": "text"
+								},
+								{
+									"key": "email_address",
+									"value": "TesttingHritik@wd",
+									"type": "text"
+								},
+								{
+									"key": "instagram_link",
+									"value": "gg",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "facebook_link",
+									"value": "rtyuyhgfd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "profile_photo",
+									"type": "file",
+									"src": "/Users/macbookpro/Downloads/SampleJPGImage_5mbmb.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}profile_update",
+							"host": [
+								"{{local}}profile_update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Profile Account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "reason",
+									"value": "other",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "no longer required",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}delete_account",
+							"host": [
+								"{{dev}}delete_account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service Packages",
+			"item": [
+				{
+					"name": "Packages Listing",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"url": {
+							"raw": "{{dev}}packages_listing/6",
+							"host": [
+								"{{dev}}packages_listing"
+							],
+							"path": [
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Packages Cake",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vendor_id",
+									"value": "3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "vendor_service_id",
+									"value": "1",
+									"description": "//7= for cake",
+									"type": "text"
+								},
+								{
+									"key": "standard_rate",
+									"value": "287",
+									"type": "text"
+								},
+								{
+									"key": "specialize[0]\n",
+									"value": "cake",
+									"type": "text"
+								},
+								{
+									"key": "specialize[1]",
+									"value": "chocolate",
+									"type": "text"
+								},
+								{
+									"key": "flavours[0]",
+									"value": "two",
+									"type": "text"
+								},
+								{
+									"key": "flavours[1]",
+									"value": "catburry",
+									"type": "text"
+								},
+								{
+									"key": "tiers[0]",
+									"value": "0ne",
+									"type": "text"
+								},
+								{
+									"key": "tiers[1]",
+									"value": "three",
+									"type": "text"
+								},
+								{
+									"key": "signature",
+									"value": "ytyty",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}packages_cake",
+							"host": [
+								"{{local}}packages_cake"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Packages Mehendi",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvV2VkenktQmFja2VuZC92ZW5kb3JfYXBpL3YxL3JlZ2lzdHJhdGlvbl9mb3JtIiwiaWF0IjoxNzAzNjg0OTcyLCJleHAiOjE3MDYyNzY5NzIsIm5iZiI6MTcwMzY4NDk3MiwianRpIjoia01PalU5aG1ZSlBiNldoZiIsInN1YiI6IjE1IiwicHJ2IjoiNDBiYzNmZGUzNDYyNTdhODUwOTUwMmZlNjQyMzU1OWExMTE2NGJkMyJ9.i_Tavt7Rpyn8lrDLnj-WqS671ULr7_oAT4L7AULasyU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "bridal_mehendi_price",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "five_mehendi_price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "ten_mehendi_price",
+									"value": "600000",
+									"type": "text"
+								},
+								{
+									"key": "twenty_mehendi_price",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "vendor_service_xid",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}packages_mehendi",
+							"host": [
+								"{{local}}packages_mehendi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Choreography",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RldmVsb3BtZW50LndlZHp5LmNvL3ZlbmRvcl9hcGkvdjEvcmVnaXN0cmF0aW9uX290cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MDM3NDY1NTIsImV4cCI6MTcwNjMzODU1MiwibmJmIjoxNzAzNzQ2NTUyLCJqdGkiOiJOWmxGNmFyZ0pXcjVmcWNuIiwic3ViIjoiNDIiLCJwcnYiOiI0MGJjM2ZkZTM0NjI1N2E4NTA5NTAyZmU2NDIzNTU5YTExMTY0YmQzIn0.vmvjo-rBdw7q3RCPGTL_F0hMUVfNssZ1D3-HPDpKnqA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_xid",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "nature_of_business",
+									"value": "Solo freelancer",
+									"type": "text"
+								},
+								{
+									"key": "about_packages_pricing",
+									"value": "testing////...",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}package/choreography",
+							"host": [
+								"{{local}}package"
+							],
+							"path": [
+								"choreography"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Catering",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3dlZHp5X2JhY2tlbmQvdmVuZG9yX2FwaS92MS9yZWdpc3RyYXRpb25fZm9ybSIsImlhdCI6MTcwMzY2MTQzNywiZXhwIjoxNzA2MjUzNDM3LCJuYmYiOjE3MDM2NjE0MzcsImp0aSI6IjdlenVDRVR3ck1KRm9TWXQiLCJzdWIiOiI0NCIsInBydiI6IjQwYmMzZmRlMzQ2MjU3YTg1MDk1MDJmZTY0MjM1NTlhMTExNjRiZDMifQ.6kRwC9Ie-8X1eUtceYIk84LRlCzXQGdK_tfEwOWoU2I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_xid",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "business_category",
+									"value": "Normal Catering",
+									"type": "text"
+								},
+								{
+									"key": "type_of_caterer[0]",
+									"value": "Chaat Provider only",
+									"type": "text"
+								},
+								{
+									"key": "type_of_caterer[1]",
+									"value": "Available with international",
+									"type": "text"
+								},
+								{
+									"key": "following_categories[0]",
+									"value": "Jain",
+									"type": "text"
+								},
+								{
+									"key": "following_categories[1]",
+									"value": "Vegeterian",
+									"type": "text"
+								},
+								{
+									"key": "maximum_no_of_people",
+									"value": "200",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}package/catering",
+							"host": [
+								"{{local}}package"
+							],
+							"path": [
+								"catering"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Photography",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RldmVsb3BtZW50LndlZHp5LmNvL3ZlbmRvcl9hcGkvdjEvcmVnaXN0cmF0aW9uX290cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MDQyNjIxMzQsImV4cCI6MTcwNjg1NDEzNCwibmJmIjoxNzA0MjYyMTM0LCJqdGkiOiJaSUNGYmZxZXd3RVpScmV5Iiwic3ViIjoiNjIiLCJwcnYiOiI0MGJjM2ZkZTM0NjI1N2E4NTA5NTAyZmU2NDIzNTU5YTExMTY0YmQzIn0.Jed0AfXB13_PQL-zEtlCTMRqdK7Izatch-A_5NoytvQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data[weeding_pre][vendor_service_xid]",
+									"value": "10",
+									"description": "data",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[weeding_pre][package_type1]",
+									"value": "Photography asd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[weeding_pre][description1]",
+									"value": "dsgdg",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[weeding_pre][price1]",
+									"value": "300",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[weeding_pre][package_type2]",
+									"value": "Photography videography",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[weeding_pre][description2]",
+									"value": "fgegdfg",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[weeding_pre][price2]",
+									"value": "2000",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[weeding_pre][is_best]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[other_package][0][package_include]",
+									"value": "sdd",
+									"type": "text"
+								},
+								{
+									"key": "data[other_package][0][package_price]",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "data[other_package][0][is_best]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[other_package][0][no_of_days]",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "data[other_package][0][no_of_events]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[other_package][0][title]",
+									"value": "testiing",
+									"type": "text"
+								},
+								{
+									"key": "data[other_package][0][vendor_service_xid]",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}package/photography",
+							"host": [
+								"{{local}}package"
+							],
+							"path": [
+								"photography"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Packages Talent",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RldmVsb3BtZW50LndlZHp5LmNvL3ZlbmRvcl9hcGkvdjEvcmVnaXN0cmF0aW9uX290cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MDM4Mjc2OTUsImV4cCI6MTcwNjQxOTY5NSwibmJmIjoxNzAzODI3Njk1LCJqdGkiOiJPa3o4YzdKTm93a3d3OGxnIiwic3ViIjoiNDIiLCJwcnYiOiI0MGJjM2ZkZTM0NjI1N2E4NTA5NTAyZmU2NDIzNTU5YTExMTY0YmQzIn0.m3GnnACHgaPUeZm8h94dVX2FRcluubiGpEUbKlcKdDY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "about_business",
+									"value": "ycdygyucgsygysu",
+									"type": "text"
+								},
+								{
+									"key": "about_packages_and_pricing",
+									"value": "uygdsyugvgyuvs",
+									"type": "text"
+								},
+								{
+									"key": "vendor_service_id",
+									"value": "8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}packages_talent",
+							"host": [
+								"{{local}}packages_talent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Packages Decorator",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RldmVsb3BtZW50LndlZHp5LmNvL3ZlbmRvcl9hcGkvdjEvcmVnaXN0cmF0aW9uX290cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MDM4Mjc2OTUsImV4cCI6MTcwNjQxOTY5NSwibmJmIjoxNzAzODI3Njk1LCJqdGkiOiJPa3o4YzdKTm93a3d3OGxnIiwic3ViIjoiNDIiLCJwcnYiOiI0MGJjM2ZkZTM0NjI1N2E4NTA5NTAyZmU2NDIzNTU5YTExMTY0YmQzIn0.m3GnnACHgaPUeZm8h94dVX2FRcluubiGpEUbKlcKdDY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "decorator_description",
+									"value": "lights ",
+									"type": "text"
+								},
+								{
+									"key": "vendor_service_xid",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}packages_decorator",
+							"host": [
+								"{{local}}packages_decorator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Packages MakeUp",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{local-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data[0][vendor_service_xid]",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "data[0][price_within_mumbai]",
+									"value": "500005",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_name]",
+									"value": "Gold",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_price]",
+									"value": "400005",
+									"type": "text"
+								},
+								{
+									"key": "data[0][is_featured]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][makeup_artist_travel]",
+									"value": "yes",
+									"type": "text"
+								},
+								{
+									"key": "data[1][vendor_service_xid]",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "data[1][price_within_mumbai]",
+									"value": "1111",
+									"type": "text"
+								},
+								{
+									"key": "data[1][package_name]",
+									"value": "silver",
+									"type": "text"
+								},
+								{
+									"key": "data[1][package_price]",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "data[1][is_featured]",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "data[1][makeup_artist_travel]",
+									"value": "11",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}packages_makeup",
+							"host": [
+								"{{local}}packages_makeup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Packages Dj",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data[0][vendor_service_xid]",
+									"value": "5",
+									"description": "// for Dj = 5",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_name]",
+									"value": "full package jhgyju",
+									"type": "text"
+								},
+								{
+									"key": "data[0][is_day]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][price]",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_title]",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_description]",
+									"value": "hjhjhj",
+									"type": "text"
+								},
+								{
+									"key": "data[1][vendor_service_xid]",
+									"value": "5",
+									"description": "// for Dj = 5",
+									"type": "text"
+								},
+								{
+									"key": "data[1][package_name]",
+									"value": "yugysudg",
+									"type": "text"
+								},
+								{
+									"key": "data[1][is_day]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "data[1][price]",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "data[1][package_title]",
+									"value": "dfdf",
+									"type": "text"
+								},
+								{
+									"key": "data[1][package_description]",
+									"value": "hjhjhj",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}package/dj",
+							"host": [
+								"{{dev}}package"
+							],
+							"path": [
+								"dj"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Venue Master",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2RldmVsb3BtZW50LndlZHp5LmNvL3ZlbmRvcl9hcGkvdjEvcmVnaXN0cmF0aW9uX290cF92ZXJpZmljYXRpb24iLCJpYXQiOjE3MDQyNjIxMzQsImV4cCI6MTcwNjg1NDEzNCwibmJmIjoxNzA0MjYyMTM0LCJqdGkiOiJaSUNGYmZxZXd3RVpScmV5Iiwic3ViIjoiNjIiLCJwcnYiOiI0MGJjM2ZkZTM0NjI1N2E4NTA5NTAyZmU2NDIzNTU5YTExMTY0YmQzIn0.Jed0AfXB13_PQL-zEtlCTMRqdK7Izatch-A_5NoytvQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}venue_master",
+							"host": [
+								"{{local}}venue_master"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Venue Package",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data[0][vendor_service_xid]",
+									"value": "6",
+									"type": "text"
+								},
+								{
+									"key": "data[0][venue_master_xid]",
+									"value": "2",
+									"description": "// 1,2,3",
+									"type": "text"
+								},
+								{
+									"key": "data[0][master_title]",
+									"value": "Banquet Hall",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_title]",
+									"value": "package 1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][rooms_hours_days]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][pax]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_include]",
+									"value": "test1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_price]",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "data[0][is_featured]",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "data[0][master_title_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][package_title_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][rooms_hours_days_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][pax_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][package_include_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][package_price_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][is_featured_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][is_both]",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}packages_venue",
+							"host": [
+								"{{dev}}packages_venue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bartender Services",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data[0][vendor_service_xid]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][package_type]",
+									"value": "2",
+									"description": "// 1,2,3",
+									"type": "text"
+								},
+								{
+									"key": "data[0][no_of_guests]",
+									"value": "10000",
+									"type": "text"
+								},
+								{
+									"key": "data[0][head_bartender]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][flair_bartender]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][bar_rover]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][mixologist]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[0][price]",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "data[0][is_featured]",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "data[0][master_title_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][package_title_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][rooms_hours_days_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][pax_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][package_include_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][package_price_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][is_featured_lawn]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[0][is_both]",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "data[1][vendor_service_xid]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[1][package_type]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[1][no_of_guests]",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "data[1][no_of_guests]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[1][head_bartender]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[1][flair_bartender]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[1][bar_rover]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[1][mixologist]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data[1][price]",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "data[1][is_featured]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "data",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dev}}package/bartender",
+							"host": [
+								"{{dev}}package"
+							],
+							"path": [
+								"bartender"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "get In App Notification",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{basic-auth-password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{basic-auth-ursername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "access-token",
+								"value": "{{dev-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{dev}}in_app_notification_listing",
+							"host": [
+								"{{dev}}in_app_notification_listing"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
